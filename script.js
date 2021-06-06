@@ -1,5 +1,8 @@
+// url from were we get data
 let url = "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true"
+
 var html ='';
+
 fetch(url).then(response => response.json()).then(data => {
     // console.log(data);
     
@@ -10,6 +13,7 @@ fetch(url).then(response => response.json()).then(data => {
     console.log(error);
 })
 
+// adding tables as the data get
 function display(element,index) {
     html+=`<div class="col-md-4" id="table">
     <h3 style="text-align: center">${element.country}</h3>
