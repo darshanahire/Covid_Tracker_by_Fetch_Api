@@ -1,9 +1,28 @@
 *{
     font-family: 'Cuprum', sans-serif;
 }
-#mytable{
-    margin:auto 100px
+@media screen and (max-width: 512px) {
+    #mytable{
+        width: 100%;
+        margin:0px; 
+        padding: 10px;
+    }
+    #finaltable{
+        width: 100%;
+        margin:0px; 
+        padding: 20px;
+    }
+    .container{
+        padding: 20px;
+    }
+  }
+.mytable{
+    margin:auto 100px; 
 }
-.table{
+/* .table{
     margin: 5px;
+} */
+.knowmore{
+    width: 50%;
+    margin: auto;
 }

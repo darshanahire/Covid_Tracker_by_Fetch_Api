@@ -3,18 +3,22 @@ let contener = document.getElementById("contener")
 let url = "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true"
 var html ='';
 fetch(url).then(response => response.json()).then(data => {
-    console.log(data);
+    // console.log(data);
     
     var mydata = Array.from(data)
+    mydata.sort(function(a,b){
+      return b.infected- a.infected ;
+    });
+    // console.log(mydata);
     
-        mydata.forEach(display)
-}).catch(error => {
+    mydata.forEach(display)
+  }).catch(error => {
     console.log(error);
-})
-
-function display(element,index) {
+  })
+  
+  function display(element,index) {
     html+=`
-    <div class="accordion" id="accordionExample" style="width:50%;margin:2px auto;">
+    <div class="accordion" id="accordionExample" ">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index+1}"
